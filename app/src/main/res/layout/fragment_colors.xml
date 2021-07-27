@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_color"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ly1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/ly1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btWhite"
+            android:backgroundTint="@color/white"
+            android:layout_marginStart="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Go"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+        <Button
+            android:id="@+id/btPurple_500"
+            android:backgroundTint="@color/purple_500"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Go"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly1">
+
+    <Button
+        android:id="@+id/btTeal_200"
+        android:backgroundTint="@color/teal_200"
+        android:layout_marginStart="15dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/Go"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"  />
+
+    <Button
+        android:id="@+id/btBlack"
+        android:backgroundTint="@color/black"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/Go"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btBack"
+        android:backgroundTint="@color/green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly2"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
