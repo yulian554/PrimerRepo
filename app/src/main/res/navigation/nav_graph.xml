@@ -18,8 +18,8 @@
 
     <fragment
         android:id="@+id/colorsFragment"
-        android:name="com.example.projectgit.view.HomeFragment"
-        android:label="fragment_home_fragments"
+        android:name="com.example.projectgit.view.ColorsFragment"
+        android:label="fragment_colors_fragments"
         tools:layout="@layout/fragment_colors" >
         <action
             android:id="@+id/action_colorsFragment_to_homeFragment"
