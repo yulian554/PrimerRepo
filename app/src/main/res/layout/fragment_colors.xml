@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="colorsViewModel"
+            type="com.example.projectgit.viewmodels.ColorsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <TextView
+        android:id="@+id/tvCosas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/change_color"
+        android:text="@{String.valueOf(colorsViewModel.animals ?? colorsViewModel.name)}"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold"
+        tools:text="@string/change_object"
+        app:layout_constraintBottom_toTopOf="@+id/ly1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ly1"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
         android:id="@+id/ly1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btWhite"
-            android:backgroundTint="@color/white"
-            android:layout_marginStart="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:layout_weight="1"
-            android:text="@string/Go"
+            android:onClick="@{() -> colorsViewModel.animalsRandom()}"
+            android:backgroundTint="@color/white"
+            android:text="@string/Animals"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btPurple_500"
-            android:backgroundTint="@color/purple_500"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_weight="1"
-            android:text="@string/Go"
+            android:backgroundTint="@color/purple_500"
+            android:text="@string/nombres"
             android:textSize="20sp"
-            android:textStyle="bold"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -59,47 +72,49 @@
         android:id="@+id/ly2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ly1">
 
-    <Button
-        android:id="@+id/btTeal_200"
-        android:backgroundTint="@color/teal_200"
-        android:layout_marginStart="15dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/Go"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"  />
+        <Button
+            android:id="@+id/btTeal_200"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal_200"
+            android:text="@string/Go"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btBlack"
-        android:backgroundTint="@color/black"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/Go"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+        <Button
+            android:id="@+id/btBlack"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:text="@string/Go"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btBack"
-        android:backgroundTint="@color/green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
         android:text="@string/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ly2"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </layout>
