@@ -29,7 +29,6 @@ class ColorsFragment : Fragment() {
         }
         return binding.root
     }
-    
 
     private fun navToHome(view: View) {
         Navigation.findNavController(view).navigate(R.id.action_colorsFragment_to_homeFragment)

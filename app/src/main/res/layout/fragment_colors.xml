@@ -18,7 +18,7 @@
         android:id="@+id/tvCosas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@{String.valueOf(colorsViewModel.animals ?? colorsViewModel.name)}"
+        android:text="@{String.valueOf(colorsViewModel.viewChange ?? colorsViewModel.nameOption)}"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -61,8 +61,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_weight="1"
+            android:onClick="@{() -> colorsViewModel.nameRandom()}"
             android:backgroundTint="@color/purple_500"
-            android:text="@string/nombres"
+            android:text="@string/names"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -83,8 +84,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_weight="1"
+            android:onClick="@{() -> colorsViewModel.animeRandom()}"
             android:backgroundTint="@color/teal_200"
-            android:text="@string/Go"
+            android:text="@string/anime"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -96,8 +98,9 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:layout_weight="1"
+            android:onClick="@{() -> colorsViewModel.stuffRandom()}"
             android:backgroundTint="@color/black"
-            android:text="@string/Go"
+            android:text="@string/stuff"
             android:textSize="20sp"
             android:textStyle="bold" />
 

@@ -6,6 +6,8 @@
     <string name="next_page">next page</string>
     <string name="back">back</string>
     <string name="change_object">change object</string>
-    <string name="nombres">Nombres</string>
+    <string name="names">Names</string>
     <string name="Go">Go</string>
+    <string name="anime">Anime</string>
+    <string name="stuff">Stuff</string>
 </resources>
